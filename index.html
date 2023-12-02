@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webble</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="back()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h2>WEB BLE</h2>
+    </header>
+    <div  id="visibleContent" >
+    <div class="container">
+        <div class="box" onclick="show1(); requestBluetoothDevice()">
+            <img src="dht.png">
+            <h6>DHT11 ESP32</h3>
+        </div>
+        <div class="box" onclick="show3(); requestBluetoothDevice()">
+            <img src="wifi.png">
+            <h6>CONFIG WIFI ESP32CAM</h3>
+        </div>
+        <div class="box" onclick="show2(); requestBluetoothDevice()">
+            <img src="jdy.png">
+            <h6>TERMINAL</h3>
+        </div>
+        <div class="box" onclick="requestalldevice()">
+            <img src="ble.png">
+            <h6>ALL DEVICE</h3>
+        </div>
+    </div>
+</div>
+<div id="hiddenContent2" style="display: none;">
+    <!-- Nội dung bạn muốn ẩn ban đầu -->
+    <h3>LEANBOT</h3>
+    <div class="container card card-body">
+        <h5>TERMINAL</h5>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <textarea class="form-control text-log" id="textareaNotification" style="height: 200px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="form-check form-check-inline ml-3">
+                    <input type="checkbox" class="form-check-input" id="myCheckbox" onchange="performFunction()">
+                    <label class="form-check-label" for="myCheckbox">Show</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="Checkbox" onchange="Checkshowtime()">
+                    <label class="form-check-label" for="Checkbox">Time</label>
+                </div>
+                </div>
+    </div>
+</div>
+<div id="hiddenContent1" style="display: none;">
+    <!-- Nội dung bạn muốn ẩn ban đầu -->
+    <h3>DHT</h3>
+    <div class="container card card-body">
+        <div class="row text-center">
+            <div class="card card-body ml-3 mr-3 col-5.3">
+               <h6>Nhiệt độ</h6>
+            <div id="Value1">
+                <h4>0&deg;C</h4>
+            </div>
+            </div>
+            <div class="card card-body ml-3 mr-3 col-5.6">
+                <h6>Độ ẩm</h6>
+             <div id="Value2">
+                 <h4>0%</h4>
+             </div>
+             </div>
+        </div>
+        <!-- <h5>TERMINAL</h5>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <textarea class="form-control text-log" id="textareaNotification" style="height: 200px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="form-check form-check-inline ml-3">
+                    <input type="checkbox" class="form-check-input" id="myCheckbox" onchange="performFunction()">
+                    <label class="form-check-label" for="myCheckbox">Show</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="Checkbox" onchange="Checkshowtime()">
+                    <label class="form-check-label" for="Checkbox">Time</label>
+                </div>
+                </div> -->
+    </div>
+</div>
+<div id="hiddenContent3" style="display: none;">
+    <h3>CONFIG WIFI</h3>
+    <div class="d-flex justify-content-center">
+        <input type="text" id="input1" placeholder="Enter SSID">
+    </div>
+    <div class="d-flex justify-content-center mt-1">
+        <input type="text" id="input2" placeholder="Enter Password">
+    </div>
+    <div class="d-flex justify-content-center mt-1 mb-1">
+        <button onclick="ConnectWifi()">Kết nối</button>
+    </div>
+</div>
+    <footer>
+        &copy; PTIT TEAM
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
